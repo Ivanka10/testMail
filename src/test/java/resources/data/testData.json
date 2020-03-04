@@ -1,0 +1,11 @@
+[
+  {
+    "login":"testmailuser1@ukr.net",
+    "password":"testUserPassword",
+    "messageModel": {
+      "receiver":"ivankaboiko06@gmail.com",
+      "subject":"subject1",
+      "message": "Hy, how are you."
+    }
+  }
+]
