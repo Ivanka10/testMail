@@ -11,7 +11,11 @@ class BasePage {
     protected WebDriver driver;
 
     BasePage(){
-        driver = DriverManager.getDriver();
+        try {
+            driver = DriverManager.getDriver();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         PageFactory.initElements(driver, this);
     }
 
