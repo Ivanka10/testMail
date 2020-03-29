@@ -1,21 +1,17 @@
 package po;
 
-import driver.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 class BasePage {
     protected WebDriver driver;
 
-    BasePage(){
-        try {
-            driver = DriverManager.getDriver();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    BasePage(WebDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 

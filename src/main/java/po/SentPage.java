@@ -1,6 +1,7 @@
 package po;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -14,10 +15,14 @@ public class SentPage extends BasePage {
 
     private final String MAIL_BY_SENDER = "//span[@class='msglist__row-address-wrap' and text()='%s']";
 
+    SentPage(WebDriver driver) {
+        super(driver);
+    }
+
     public MailPage openLastSentMessageBySender(String sender) {
         waitForElement(receivers);
         List<WebElement> receivers = driver.findElements(By.xpath(String.format(MAIL_BY_SENDER, sender)));
         receivers.get(0).click();
-        return new MailPage();
+        return new MailPage(driver);
     }
 }

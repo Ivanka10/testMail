@@ -1,5 +1,6 @@
 package bo;
 
+import org.openqa.selenium.WebDriver;
 import po.HomePage;
 import po.MailPage;
 import po.NewMailPage;
@@ -12,8 +13,8 @@ public class MailActions {
     private NewMailPage newMailPage;
     private SentPage sentPage;
 
-    public MailActions() {
-        homePage = new HomePage();
+    public MailActions(WebDriver driver) {
+        homePage = new HomePage(driver);
     }
 
     public void sendMail(String receiver, String subject, String bodyMail) {

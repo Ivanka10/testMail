@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -17,7 +18,8 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement loginBtn;
 
-    public LoginPage() {
+    public LoginPage(WebDriver driver) {
+        super(driver);
         waitForElement(logo);
     }
     public LoginPage inputLogin(String login) {

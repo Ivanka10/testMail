@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,6 +19,10 @@ public class NewMailPage extends BasePage {
     private WebElement messageBody;
 
     private final String FRAME = "mce_0_ifr";
+
+    NewMailPage(WebDriver driver) {
+        super(driver);
+    }
 
     public NewMailPage inputSubject(String subject) {
         waitForElement(subjectField);
@@ -42,6 +47,6 @@ public class NewMailPage extends BasePage {
     public HomePage clickSendBtn() {
         waitForElementToBeClickable(sendBtn, 5);
         sendBtn.click();
-        return new HomePage();
+        return new HomePage(driver);
     }
 }

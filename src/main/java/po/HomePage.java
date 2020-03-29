@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -21,7 +22,8 @@ public class HomePage extends BasePage {
     private WebElement sentLink;
 
 
-    public HomePage() {
+    public HomePage(WebDriver driver) {
+        super(driver);
         waitForElement(toolBar, 10);
     }
 
@@ -33,7 +35,7 @@ public class HomePage extends BasePage {
     public NewMailPage clickComposeBtn() {
         waitForElementToBeClickable(composeBtn);
         composeBtn.click();
-        return new NewMailPage();
+        return new NewMailPage(driver);
     }
 
     public Boolean isSuccessMsgDisplayed() {
@@ -43,6 +45,6 @@ public class HomePage extends BasePage {
     public SentPage goToSentMails() {
         waitForElementToBeClickable(sentLink);
         sentLink.click();
-        return new SentPage();
+        return new SentPage(driver);
     }
 }

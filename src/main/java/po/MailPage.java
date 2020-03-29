@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -14,7 +15,8 @@ public class MailPage extends BasePage {
     @FindBy(className = "readmsg__head-contacts")
     private WebElement sender;
 
-    MailPage() {
+    MailPage(WebDriver driver) {
+        super(driver);
         waitForElement(sender, 10);
     }
 

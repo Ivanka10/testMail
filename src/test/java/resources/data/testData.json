@@ -7,5 +7,14 @@
       "subject":"subject1",
       "message": "Hy, how are you."
     }
+  },
+  {
+    "login": "testmailuser1@ukr.net",
+    "password": "testUserPassword",
+    "messageModel": {
+      "receiver": "ivankaboiko06@gmail.com",
+      "subject": "subject2",
+      "message": "Hy, how are you."
+    }
   }
 ]
