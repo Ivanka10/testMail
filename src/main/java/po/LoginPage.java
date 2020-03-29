@@ -32,9 +32,8 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public HomePage clickLoginBtn() {
+    public void clickLoginBtn() {
         waitForElementToBeClickable(loginBtn, 5);
         loginBtn.click();
-        return new HomePage();
     }
 }

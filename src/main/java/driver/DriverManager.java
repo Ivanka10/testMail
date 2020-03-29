@@ -26,7 +26,7 @@ public class DriverManager {
 
         System.setProperty(String.format("webdriver.%s.driver", driverName), filePath.propertyFile("filePathDriver" + driverName));
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+        DesiredCapabilities capabilities;
         if(driverName.equals("chrome")){
             capabilities = DesiredCapabilities.chrome();
         } else if(driverName.equals("firefox")) {
